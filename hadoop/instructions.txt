@@ -1,0 +1,13 @@
+1. "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/"
+2. Use bin/hadoop from hadoop folder, to verify the correct version "bin/hadoop --version".
+3. Get the class path of the hadoop, using command "bin/hadoop classpath"
+4. export this classpath, 
+   "export CLASSPATH=paste_the_classpath_here"
+5. After adding both the classpaths, the written Java files should be compiled and the generated classfiles should are used to create JAR file along with Manifest.
+6. Go to the folder with source code, and compile all the Java files using:
+   "javac -d . *.java"
+7. Create Manifest.txt, with the text "Main-Class: package.main_class"
+8. Bundling into JAR:
+   "jar cfm abc.jar Manifest.txt Folder"
+9. Run:
+   "~/Downloads/hadoop-3.2.2/bin/hadoop jar abc.jar input.csv output"
