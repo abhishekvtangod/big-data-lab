@@ -11,3 +11,4 @@
    "jar cfm abc.jar Manifest.txt Folder"
 9. Run:
    "~/Downloads/hadoop-3.2.2/bin/hadoop jar abc.jar input.csv output"
+
