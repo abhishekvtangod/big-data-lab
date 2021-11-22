@@ -32,13 +32,13 @@ public class reducer extends Reducer<Text,IntWritable,Text,IntWritable> {
         if(temp.substring(0, 9) == "_country_"){
             int total_sales = 0;
             for(IntWritable val: values){
-                total_sales++;
+                total_sales+=val.get();
             }
             context.write(key, new IntWritable(total_sales));
         } else{
             int payment_freq = 0;
             for(IntWritable val: values){
-                payment_freq++;
+                payment_freq+=val.get();
             }
             context.write(key, new IntWritable(payment_freq));
         }
