@@ -6,12 +6,10 @@ _country_Belgium	8
 _country_Bermuda	1
 _country_Brazil	5
 _country_Bulgaria	1
-_country_CO	1
 _country_Canada	76
 _country_Cayman Isls	1
 _country_China	1
 _country_Costa Rica	1
-_country_Country	1
 _country_Czech Republic	3
 _country_Denmark	15
 _country_Dominican Republic	1
@@ -55,10 +53,8 @@ _country_Turkey	6
 _country_Ukraine	1
 _country_United Arab Emirates	6
 _country_United Kingdom	100
-_country_United States	462
-_payment_type_000"	1
+_country_United States	463
 _payment_type_Amex	110
 _payment_type_Diners	89
 _payment_type_Mastercard	277
-_payment_type_Payment_Type	1
-_payment_type_Visa	521
+_payment_type_Visa	522
