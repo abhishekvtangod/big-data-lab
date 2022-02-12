@@ -1,5 +1,5 @@
 1. "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/"
-2. Use bin/hadoop from hadoop folder, to verify the correct version "bin/hadoop --version".
+2. Use bin/hadoop from hadoop folder, to verify the correct version "bin/hadoop version".
 3. Get the class path of the hadoop, using command "bin/hadoop classpath"
 4. export this classpath, 
    "export CLASSPATH=paste_the_classpath_here"
