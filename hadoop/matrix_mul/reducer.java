@@ -48,7 +48,7 @@ public class reducer extends Reducer<Text,Text,Text,Text> {
         double b_jk;
         for(int j = 0; j < n; j++){
             a_ij = hashA.containsKey(j) ? hashA.get(j) : 0;
-            b_jk = hashA.containsKey(j) ? hashA.get(j) : 0;
+            b_jk = hashB.containsKey(j) ? hashB.get(j) : 0;
             result += a_ij * b_jk;
         }
         if(result != 0){
