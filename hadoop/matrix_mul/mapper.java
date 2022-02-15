@@ -30,7 +30,8 @@ public class mapper extends Mapper<Object, Text, Text, Text>{
         // int m = Integer.parseInt(conf.get("m"));
         // int n = Integer.parseInt(conf.get("n"));
         // int p = Integer.parseInt(conf.get("p"));
-        int m = 2, n = 5, p = 2;
+        int m = 2, n = 5, p = 3;
+        //mxn, nxp
         String[] s = value.toString().split(",");
         
         // for(String val: s)
@@ -41,15 +42,19 @@ public class mapper extends Mapper<Object, Text, Text, Text>{
         String outputValue = "";
         
         if(s[0].equals("A")){
+            // i, j, A[i][j]
+            // k -> p
             for(int k = 0; k < p; k++){
-                outputKey = s[1] + "," + k;
-                outputValue = "A," + s[2] + "," + s[3];
+                outputKey = s[1] + "," + k;                 // i, k
+                outputValue = "A," + s[2] + "," + s[3];     // j, A[i][j]
                 context.write(new Text(outputKey), new Text(outputValue));
             }
         } else{
+            // j, k, B[j][k]
+            // i -> m
             for(int i = 0; i < m; i++){
-                outputKey = i + "," + s[2];
-                outputValue = "B," + s[1] + "," + s[3];
+                outputKey = i + "," + s[2];                 // i, k
+                outputValue = "B," + s[1] + "," + s[3];     // j, B[j][k]
                 context.write(new Text(outputKey), new Text(outputValue));
             }
         }
