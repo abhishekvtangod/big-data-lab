@@ -30,8 +30,11 @@ public class mapper extends Mapper<Object, Text, Text, Text>{
         // int m = Integer.parseInt(conf.get("m"));
         // int n = Integer.parseInt(conf.get("n"));
         // int p = Integer.parseInt(conf.get("p"));
+        
+        
         int m = 2, n = 5, p = 3;
         //mxn, nxp
+        //ixj, jxk
         String[] s = value.toString().split(",");
         
         // for(String val: s)
