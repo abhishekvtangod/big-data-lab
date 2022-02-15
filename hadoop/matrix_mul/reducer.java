@@ -24,11 +24,11 @@ public class reducer extends Reducer<Text,Text,Text,Text> {
                     Context context
                     ) throws IOException, InterruptedException {
         //Input:
-		// key=(i, k) || vals = ... , ("A", j, A[i][j]), ("B", j, B[j][k]) , ...
-		
-		//Output:
-		// key=(i, k) || val = sumJ(Aij * Bjk)
-		// j -> n
+	// key=(i, k) || vals = ... , ("A", j, A[i][j]), ("B", j, B[j][k]) , ...
+
+	//Output:
+	// key=(i, k) || val = sumJ(Aij * Bjk)
+	// j -> n
         
         String[] value;
         
