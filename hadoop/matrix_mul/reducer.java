@@ -51,6 +51,7 @@ public class reducer extends Reducer<Text,Text,Text,Text> {
         double result = 0;
         double a_ij;
         double b_jk;
+	// j -> n
         for(int j = 0; j < n; j++){
             // for each j and the present (i, k), get it's according a_ij and b_jk
             a_ij = hashA.containsKey(j) ? hashA.get(j) : 0;
