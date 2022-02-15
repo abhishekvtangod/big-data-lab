@@ -23,14 +23,19 @@ public class reducer extends Reducer<Text,Text,Text,Text> {
     public void reduce(Text key, Iterable<Text> values,
                     Context context
                     ) throws IOException, InterruptedException {
-        // int sum = 0;
-        // for (IntWritable val : values) {
-        //     sum += val.get();
-        // }
-        // result.set(sum);
-        // context.write(key, result);
+        //Input:
+		// key=(i, k) || vals = ... , ("A", j, A[i][j]), ("B", j, B[j][k]) , ...
+		
+		//Output:
+		// key=(i, k) || val = sumJ(Aij * Bjk)
+		// j -> n
+        
         String[] value;
+        
+        // j, A[i][j]
         HashMap<Integer, Double> hashA = new HashMap<Integer, Double>();
+        
+        // j, B[j][k]
         HashMap<Integer, Double> hashB = new HashMap<Integer, Double>();
         
         for(Text val: values){
@@ -47,6 +52,7 @@ public class reducer extends Reducer<Text,Text,Text,Text> {
         double a_ij;
         double b_jk;
         for(int j = 0; j < n; j++){
+            // for each j and the present (i, k), get it's according a_ij and b_jk
             a_ij = hashA.containsKey(j) ? hashA.get(j) : 0;
             b_jk = hashB.containsKey(j) ? hashB.get(j) : 0;
             result += a_ij * b_jk;
